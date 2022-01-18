@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Energy Production
-parent: US Case Study
+parent: US Sample Data Methodology
 nav_order: 1
 ---
 
