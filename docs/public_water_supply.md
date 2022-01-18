@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Public Water Supply
-parent: US Case Study
-nav_order: 4
+parent: US Sample Data Methodology
+nav_order: 3
 ---
 
 ## Navigation
@@ -16,12 +16,20 @@ nav_order: 4
 
 ## Water in Public Water Supply
 
+### Withdrawals
+
+### Discharges
 
 
 ## Energy in Public Water Supply
 
-### Pumping
+### Energy Demand
 
-### Treatment
+#### Pumping
+#### Treatment
+#### Distribution
+#### Interbasin-transfers
 
-### Distribution
+### Energy Services
+
+### Rejected Energy
