@@ -1,17 +1,11 @@
-## Welcome to Flow
 
-*****
-US Case Study Data Methodology
-*****
+# US Case Study Data Methodology
 
-Background
-===============
-
+## Background
 Information on the case study and project
 
 
-General Methodology
-===============
+## General Methodology
 The following list of assumptions are applicable to the 2015 US Case Study:
 - Calculations are for the year 2015, the most recent year available for water use data in the US. When data was unavailable for 2015, the closest year available was applied.
 - Many calculation methodologies are informed by the literature. References for these methodologies are noted in the methodology descriptions as applicable.
@@ -20,8 +14,8 @@ The following list of assumptions are applicable to the 2015 US Case Study:
 - Where data was unavailable on a county level, assumptions were applied to obtain county-level data. These assumptions are additionally implemented in the flow package for those that wish to use them.
 
 
-Data
-===============
+## Data
+
 All data used in the 2015 US Case Study, which serves as the sample dataset for flow, was provided by the sources listed in the table below.
 
 .. csv-table:: a title
