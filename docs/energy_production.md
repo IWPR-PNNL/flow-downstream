@@ -3,6 +3,7 @@ layout: default
 title: Energy Production
 parent: US Case Study
 nav_order: 2
+---
 
 # Navigation Structure
 {: .no_toc }
@@ -12,7 +13,6 @@ nav_order: 2
 
 1. TOC
 {:toc}
----
 
 # ENERGY PRODUCTION
 
