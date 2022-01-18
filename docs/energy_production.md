@@ -5,7 +5,7 @@ parent: US Case Study
 nav_order: 2
 ---
 
-# Navigation Structure
+## Navigation
 {: .no_toc }
 
 ## Table of contents
