@@ -14,9 +14,7 @@ nav_order: 2
 1. TOC
 {:toc}
 
-# ENERGY PRODUCTION
-
-## Energy
+## Energy in Energy Production
 
 The following energy production technologies are included in the analysis:
 - Natural gas
@@ -44,7 +42,7 @@ MSN codes used from the EIA SEDS dataset include:
 
 Note that for energy sources that are not direct fuels (e.g., solar, nuclear), production will be equal to total consumption.
 
-## Water
+## Water in Energy Production
 
 Water in energy production is calculated for the following energy types:
 - Coal (specifically, dust control in mining)
