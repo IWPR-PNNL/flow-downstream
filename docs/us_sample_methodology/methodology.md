@@ -3,6 +3,7 @@ layout: default
 title: Methodology
 parent: US Sample Data Methodology
 nav_order: 1
+has_children: true
 ---
 
 # methodology
