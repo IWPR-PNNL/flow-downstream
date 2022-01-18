@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Customization
+title: Getting Started
 nav_order: 1
 ---
 
