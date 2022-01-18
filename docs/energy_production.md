@@ -1,8 +1,17 @@
 ---
 layout: default
-title: Buttons
+title: Energy Production
 parent: US Case Study
 nav_order: 2
+
+# Navigation Structure
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 
 # ENERGY PRODUCTION
