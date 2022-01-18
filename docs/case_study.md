@@ -1,7 +1,7 @@
 ---
 layout: default
 title: US Case Study
-nav_order: 2
+nav_order: 3
 ---
 
 
