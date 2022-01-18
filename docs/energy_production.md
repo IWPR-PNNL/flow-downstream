@@ -2,7 +2,7 @@
 layout: default
 title: Energy Production
 parent: US Case Study
-nav_order: 2
+nav_order: 1
 ---
 
 ## Navigation
