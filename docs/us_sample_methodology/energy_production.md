@@ -2,6 +2,7 @@
 layout: default
 title: Energy Production
 parent: Methodology
+grand_parent: US Sample Data Methodology
 nav_order: 1
 ---
 
