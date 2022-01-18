@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Agriculture
-parent: US Case Study
+parent: US Sample Data Methodology
 nav_order: 4
 ---
 
@@ -18,8 +18,15 @@ nav_order: 4
 
 ### Withdrawals
 
+### Discharge
+
 
 ## Energy in Agriculture
 
-### Pumping
-### Interbasin-transfers
+### Energy Demand
+#### Pumping
+#### Interbasin-transfers
+
+### Energy Services
+
+### Rejected Energy
