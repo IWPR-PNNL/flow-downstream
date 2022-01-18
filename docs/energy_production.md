@@ -14,6 +14,15 @@ nav_order: 2
 1. TOC
 {:toc}
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+{: .no_toc .text-delta }
+ 1. TOC
+{:toc}
+</details>
+
 ## Energy in Energy Production
 
 The following energy production technologies are included in the analysis:
