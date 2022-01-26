@@ -10,6 +10,7 @@ nav_order: 3
 
 ## About
 
+$$consumption fraction = consumed water/total delivered water$$
 
 The flow model (flow) gives us the capability to estimate water flows (in million gallons per day) and energy flows (in billion btu per year) across and within various sectors across and within geographical regions to analyze the interdependencies and linkages between water and power. We can use **flow** to gain an understanding of topics such as
 1. which regions have the greatest water intensity in their energy sectors,
