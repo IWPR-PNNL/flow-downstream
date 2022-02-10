@@ -1,35 +1,22 @@
 ---
-math: mathjax2
 layout: default
 title: Getting Started
-nav_order: 3
+nav_order: 2
 ---
 
 
 # Getting started
-
-
 ## About
-
-$$consumption fraction = consumed water/total delivered water$$
-
-The flow model (flow) gives us the capability to estimate water flows (in million gallons per day) and energy flows (in billion btu per year) across and within various sectors across and within geographical regions to analyze the interdependencies and linkages between water and power. We can use **flow** to gain an understanding of topics such as
+The flow model (flow) gives us the capability to organize and evaluate the interdependencies and linkages between the water and power sectors at various levels of granularity and across regions. We can use **flow** to gain an understanding of topics such as:
 1. which regions have the greatest water intensity in their energy sectors,
 2. which regions have the greatest energy intensity in their water sectors,
 3. which sectors within a region have high water and/or energy intensities
 4. how do energy and water intensities and interdependencies compare across regions,
-5. which regions  offer the greatest opportunity for energy and water resilience and efficiency enhancement,
-6. which regions show indicators of being at high risk for water and energy related threats
+5. which regions offer the greatest opportunity for energy and water resilience and efficiency enhancement,
 
-Though **flow** provides sample data to run each county of US for the year 2015, it can be extended to function for any set of regions (e.g., province, country, zip code, neighborhood) so long as the correct prerequisite data has been provided. The prerequisite data must be in the form of two-dimensional tabular data including (1) An initial data column containing rows of unique region identifiers (e.g., county FIPS code), (2) additional columns with "baseline" data for water flows (in million gallons per day) including water withdrawals to public water supply and any end-use sectors of interest (e.g., residential sector, agriculture sector) by provided region identifier and (3) energy flows [in billion british thermal units (bbtu) per year] to both electricity generation and end-use sectors of interest (e.g., residential, industrial, commercial). The baseline data must be complete for each region (e.g., for each county) specified in the region column and follow the naming conventions outlined for the model.
+Though **flow** provides sample data to run water and energy data for each county of the US, it can be extended to function for any set of regions (e.g., province, country, zip code, neighborhood) so long as the correct prerequisite data has been provided. Additionally, while **flow** was constructed to build water and energy interdependencies, units and sectors are customizable by the user, meaning that flow can be used to evaluate interdependencies between any sectors (e.g., water-food, energy-land) so long as the correct prerequisite data is provided. The prerequisite data must be in the form of two-dimensional tabular data including (1) An initial column containing rows of region identifiers (e.g., county FIPS code), (2) additional columns documenting initial flow values (e.g., water withdrawals to the public water supply), intensity factor assumptions (e.g., unit of energy required per unit of water withdrawn in the public water supply), and source/discharge fraction assumptions (e.g., 35% of electricity used in the public water supply sector is discharged to rejected energy). This prerequisite data is used by the model to iteratively build the specified connections between sectors for each region specified. In addition to building connections between sectors (e.g., electricity demand to public water supply sector), input data can be specified up to five levels of sub-sector granularity. For example, flows between total electricity demand and public water supply can be split into individual applications within the public water supply sector such as fresh surface water pumping, fresh groundwater treatment, and others.
 
-From the baseline dataset, downstream energy and water flows are calculated based on various customizable water, energy, and sector assumptions. Examples include: water consumption rates by sector, energy efficiency rates by fuel type, fuel types used in energy applications within a sector, and more. Note that these assumptions are applied to the baseline data provided by the user as necessary. That is, if more detailed sector-level and/or region-level data is available and provided by the user, the model will implement that data in the calculations in place of the generalized assumptions. For example, if water flows processed by the wastewater treatment sector are available for each region and supplied by the user, the model will determine energy use in wastewater based on these flows. However, if region-level water flows processed by wastewater treatment facilities is unavailable, the model will estimate water flows to wastewater treatment facilities for each region based on the estimated water discharge from end-use sectors (e.g., residential). In addition, if treatment type data is not provided by the user, the model will also apply assumptions to split out the estimated end-use water flows to wastewater treatment into different types of wastewater treatment flows (e.g., advanced, primary). The assumptions applied to fill the gaps where user data is not provided are customizable for each calculation, allowing for a highly customizable tool.
-
-On top of calculating energy and water flows across sectors up to the maximum level of granularity given the supplied data, **flow** also determines various energy-water resilience metrics used to evaluate model outputs across and within regions.
-
-Lastly, flow can use run output data to provide various visualizations including: barcharts, scattercharts, geospatial maps, sankey diagrams, and more. Note that the geospatial maps require additional prerequisite data.
-
-
+In addition to calculating and organizing flows across sectors, **flow** also provides visualization and analysis functions to digest the aggregated data output. These include: sankey diagrams of each unit (water and energy) showing flows between sectors in a given region, bar charts of specified sectors showing the breakdown of subsector components (e.g., electricity use by application in public water supply), and an interactive map to compare output values across included regions. Note that the geospatial maps require additional prerequisite data.
 
 
 ## Python version support
@@ -41,21 +28,12 @@ Python 3.7, 3.8, and 3.9
 
 **flow** can be installed via pip by running the following from a terminal window::
 
-    pip install flow
-
-Conda/Miniconda users can utilize the ``environment.yml`` stored in the root of this repository by executing the following from a terminal window::
-
-    conda env create --file environment.yml
-
+<pip install flow>
 
 ## Dependencies
 
-=============   ================
-Dependency      Minimum Version
-=============   ================
-numpy           1.19.4
-pandas          1.1.4
-matplotlib      3.3.3
-seaborn         0.11.1
-
-=============   ================
+| Dependency | Minimum Version |
+|:-----------|:----------------|
+|numpy       |1.19.4           |
+|pandas      |1.3.4            |
+|plotly      |5.5.0            |
