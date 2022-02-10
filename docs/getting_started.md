@@ -28,7 +28,7 @@ Python 3.7, 3.8, and 3.9
 
 **flow** can be installed via pip by running the following from a terminal window::
 
-'<pip install flow>'
+`pip install flow`
 
 ## Dependencies
 
