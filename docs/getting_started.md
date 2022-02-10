@@ -28,12 +28,12 @@ Python 3.7, 3.8, and 3.9
 
 **flow** can be installed via pip by running the following from a terminal window::
 
-<pip install flow>
+'<pip install flow>'
 
 ## Dependencies
 
-| Dependency | Minimum Version |
-|:-----------|:----------------|
-|numpy       |1.19.4           |
-|pandas      |1.3.4            |
-|plotly      |5.5.0            |
+| Dependency | Minimum Version  |
+|:-----------|:-----------------|
+|numpy       | 1.19.4           |
+|pandas      | 1.3.4            |
+|plotly      | 5.5.0            |
