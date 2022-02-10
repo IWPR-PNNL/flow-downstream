@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Contributing to flow
+title: License
 nav_order: 7
 ---
 
