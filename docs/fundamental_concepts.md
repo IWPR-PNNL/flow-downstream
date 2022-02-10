@@ -35,6 +35,11 @@ Therefore, the energy flow value connecting the public water supply sector (Node
 
 The diagram below shows each of these steps.
 
+
+![image](https://user-images.githubusercontent.com/74064300/153510917-0f598722-9462-4a2e-a3d6-67280cd9a991.png)
+
+
+
 Note that **flow** does not require node inputs and outputs to be balanced. That is to say, inflows to a node do not have to equal outflows
 and vice versa as demonstrated above with only 35% of the energy calculated being discharged.
 
