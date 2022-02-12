@@ -56,8 +56,12 @@ Up to five levels of granularity can be specified for each node. Various example
 | Electricity Generation | Natural Gas | Combined Cycle | Carbon Capture Sequestration | Once Through Cooling   |
 | Water Supply           | Fresh       | Surface Water  | Lake                         | Lake Michigan          |
 
-Note that, while the input data allows up to five levels of granularity for each node, granularity can differ across input sectors. For example, a flow from Water Supply -Fresh - Surface water
-(a level 3 node) can be calculated to total public water supply (a level 1 node). More information on generalizability and input data format requirements can be found
+Note that, while the input data allows up to five levels of granularity for each node, granularity can differ across input sectors. For example, a flow from Water Supply -Fresh - Surface water (a level 3 node) can be calculated to total public water supply (a level 1 node). 
+
+
+![image](https://user-images.githubusercontent.com/74064300/153687016-10d17859-55f5-443c-aeda-4ed3ab2f199d.png)
+
+More information on generalizability and input data format requirements can be found
 in the generalizability section.
 
 ## Aggregation and Output Granularity
