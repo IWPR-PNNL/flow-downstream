@@ -56,19 +56,19 @@ The methodology for calculating groundwater and surface water pumping energy is 
 
 The groundwater pumping intensity is calculated through the following:
 
-'ACC_GRAVITY = 9.81  # Acceleration of gravity  (m/s^2)
+`ACC_GRAVITY = 9.81  # Acceleration of gravity  (m/s^2)
 WATER_DENSITY = 997  # Water density (kg/m^3)
-PUMP_EFF = .465  # assumed pump efficiency rate
+PUMP_EFF = .465  # assumed pump efficiency rate<p>
 PSI_PSF_CONVERSION = 2.31  # conversion of pounds per square inch (psi) to pounds per square foot (psf)
 CUBIC_METERS_MG_CONVERSION = 3785.41178  # conversion factor for m^3 to million gallons
 JOULES_KWH_CONVERSION = 1 / 3600000  # conversion factor from joules to kWh
 KWH_BBTU_CONVERSION = 3412.1416416 / 1000000000  # 1 kWh is equal to 3412.1416416 btu
-METERS_FT_CONVERSION = 0.3048  # meters in a foot'
+METERS_FT_CONVERSION = 0.3048  # meters in a foot`
 
-'head_ft = PSI_PSF_CONVERSION * average_operating_pressure_psi  # conversion of psi to head (pounds per sqft)
+`head_ft = PSI_PSF_CONVERSION * average_operating_pressure_psi  # conversion of psi to head (pounds per sqft)
 diff_height_gw = METERS_FT_CONVERSION * (average_well_depth_ft + head_ft)  # calc. differential height (m)
 pump_power_gw = (water_density * diff_height_gw * ACC_GRAVITY * CUBIC_METERS_MG_CONVERSION) / PUMP_EFF  # joules/MG
-groundwater_pumping_bbtu_per_mg = pump_power_gw * JOULES_KWH_CONVERSION * KWH_BBTU_CONVERSION  # power intensity (bbtu/mg)'
+groundwater_pumping_bbtu_per_mg = pump_power_gw * JOULES_KWH_CONVERSION * KWH_BBTU_CONVERSION  # power intensity (bbtu/mg)`
 
 
 For surface water pumping, the average well depth is set to zero.
@@ -77,10 +77,10 @@ For surface water pumping, the average well depth is set to zero.
 
 The energy intensity for public water supply treatment for fresh water is provided in Greenberg et al. [4]. Estimates for desalination (saline water treatment) are provided by Tidwell et al. [2].
 
-Fresh surface water treatment = 405 kWh/mg
-Fresh groundwater treatment = 205 kWh/mg
-saline surface water treatment = 12,000 kWh/mg
-saline groundwater treatment = 12,000 kWh/mg
+Fresh surface water treatment = 405 kWh/mg <p>
+Fresh groundwater treatment = 205 kWh/mg <p>
+saline surface water treatment = 12,000 kWh/mg <p>
+saline groundwater treatment = 12,000 kWh/mg <p>
 
 All values are converted to bbtu/mgd.
 
