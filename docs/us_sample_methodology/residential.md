@@ -6,15 +6,6 @@ grand_parent: US Sample Data Methodology
 nav_order: 5
 ---
 
-## Navigation
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
 ## Water in Residential Sector
 ### Water Withdrawals/Deliveries
 ### Water Supply Withdrawals
