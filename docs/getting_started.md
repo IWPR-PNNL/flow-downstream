@@ -7,7 +7,7 @@ nav_order: 2
 
 # Getting started
 ## About
-The flow model (flow) gives us the capability to organize and evaluate the interdependencies and linkages between the water and power sectors at various levels of granularity and across regions. We can use **flow** to gain an understanding of topics such as:
+The flow model (flow) gives us the capability to organize and evaluate the interdependencies and linkages between sectors at various levels of granularity and across regions. We can use **flow** to gain an understanding of topics such as:
 1. which regions have the greatest water intensity in their energy sectors,
 2. which regions have the greatest energy intensity in their water sectors,
 3. which sectors within a region have high water and/or energy intensities

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Contributing to flow
+title: Contributing
 nav_order: 4
 ---
 
