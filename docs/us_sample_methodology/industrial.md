@@ -3,10 +3,10 @@ layout: default
 title: Industrial Sector
 parent: Methodology
 grand_parent: US Sample Data Methodology
-nav_order: 7
+nav_order: 5
 ---
 
-## Water in industrial Sector
+## Water in the Industrial Sector
 ### Water Withdrawals/Deliveries
 
 #### Water Supply Withdrawals
@@ -21,15 +21,15 @@ For 1995 counties that do not have public water deliveries to the industrial sec
 Consumption of water by the industrial sector is not provided in the Dieter et al. [1] water dataset. The most recent year with data available is the 1995 USGS water use report (Solley et al. [7]). Instead of directly using the consumptive use (mgd) from the industrial sector from the 1995 factor, consumption fractions (%) for fresh water and saline water were individually calculated based on the ratio of water consumed by the industrial sector and total water flows to the industrial sector in 1995. In order to fill consumption fraction values for counties that did not have consumed water values in 1995 but may have consumed water in 2015, the state average consumption fraction was substituted.
 
 #### Discharge to surface
-It is assumed that all fresh water that is not from public water sources and is not consumed, is discharged to the surface.
+It is assumed that all fresh water and all saline groundwater that is not from public water sources and is not consumed, is discharged to the surface.
 
 #### Discharge to ocean
-It is assumed that all saline water withdrawn by the industrial sector and not consumed, is discharged to the ocean.
+It is assumed that all saline surface water withdrawn by the industrial sector and not consumed, is discharged to the ocean.
 
 #### Discharge to wastewater supply
 It is assumed that all public water deliveries to the industrial sector are discharged to wastewater supply.
 
-## Energy in Industrial Sector
+## Energy in the Industrial Sector
 ### Energy (Direct Fuel) Demand
 
 Energy demand by the industrial sector is supplied on a state-basis from U.S. EIA for 2015. EIA provides information on energy supply (fuels) that go to sectors other than electricity generation in their SEDS dataset [8]. Each fuel is given in BTUs per year and is categorized by a specific MSN code. For the industrial sector, this includes the following MSN codes.
@@ -45,7 +45,8 @@ To split up state total values to individual counties within a state, total valu
 
 ### Energy (Electricity) Demand
 
-Electricity demand by the industrial sector is also supplied by US EIA for 2015. Electricity delivery values are used from EIA 861 electricity consumption tables for residential, commercial, industrial, and transportation sectors [9]. Values are originally provided in MWh and are converted to BBTU per day. State level values are broken up into county-level approximations based on population following the same methodology as the fuel deliveries.
+Electricity demand by the residential sector is also supplied by US EIA for 2015. Electricity delivery values are used from the Electric Power Annual dataset for residential, commercial, industrial, and transportation sectors [9]. Values are originally provided in annual MWh and are converted to BBTU per day. State level values are broken up into county-level approximations based on population following the same methodology as the fuel deliveries.
+
 
 ### Energy Services
 

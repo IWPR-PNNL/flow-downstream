@@ -3,10 +3,10 @@ layout: default
 title: Mining Sector
 parent: Methodology
 grand_parent: US Sample Data Methodology
-nav_order: 9
+nav_order: 6
 ---
 
-## Water in mining Sector
+## Water in the Mining Sector
 
 Water in the mining sector includes mining of energy and non-energy applications. Energy applications within mining include coal mining, natural gas drilling, and petroleum drilling. In order to separate these values out, water use in each of the listed energy-focused mining applications is calculated separately and subtracted out from the water values described below (provided by Dieter et al. [1] for 2015). To see the methodology for water in coal mining, water in natural gas drilling, and water in both conventional and unconventional petroleum drilling, see the Energy Production methodology section.
 
@@ -31,6 +31,6 @@ It is assumed that all saline water withdrawn by the mining sector that is not c
 ### Discharge to wastewater supply
 It is assumed that no discharges from the mining sector go to the wastewater supply.
 
-## Energy in Mining Sector
+## Energy in the Mining Sector
 
 No energy flows to the mining sector are provided and none are assumed.

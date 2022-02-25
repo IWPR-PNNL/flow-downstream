@@ -3,84 +3,69 @@ layout: default
 title: Energy Production
 parent: Methodology
 grand_parent: US Sample Data Methodology
-nav_order: 1
+nav_order: 4
 ---
-
-## Navigation
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Energy in Energy Production
 
-The following energy production technologies are included in the analysis:
+The following energy production (fuel) types are included in the analysis:
 - Natural gas
-- petroleum
-- coal
-- biomass
-- nuclear
-- hydropower
-- geothermal
-- solar
-- wind
+- Petroleum
+- Coal
+- Biomass
 
-Energy production data by type is taken from SEDS state-level data for 2015 [EIA2015]_. Data is provided in BBTU/yr. Information is provided at the state level and broken up into county level based on population percentage of total state population. Population data is provided for each US county FIPS code for 2015 in Dieter et al. (2015).
+For all of the fuel production types above except coal production data by type is taken from US EIA SEDS state-level data for 2015 [8]. Data is provided in BBTU/yr. Information is provided at the state level and broken up based on various methodologies described in greater detail below.
 
-MSN codes used from the EIA SEDS dataset include:
+MSN codes used from the EIA SEDS [8] dataset include:
 - "PAPRB": Crude oil production (including lease condensate) (BBTU)
 - "EMFDB": Biomass inputs (feedstock) to the production of fuel ethanol (BBTU)
 - "NGMPB": Natural gas marketed production (BBTU)
-- "CLPRB": Coal production (BBTU)
-- "NUETB": Nuclear energy consumed for electricity generation, total (BBTU)
-- "GETCB": Geothermal energy total consumption (BBTU)
-- "HYTCB": Hydropower total consumption (BBTU)
-- "WYTCB": Wind energy total consumption (BBTU)
-- "SOTCB": Solar energy total consumption (BBTU)
 
-Note that for energy sources that are not direct fuels (e.g., solar, nuclear), production will be equal to total consumption.
+Coal production data is provided in an alternative mine-level dataset [17] that allows us to aggregate production to the county level. This is discussed in greater detail later on this page.
 
-## Water in Energy Production
+Note that for energy sources that are not direct fuels (e.g., solar, nuclear), any production is directly consumed and values are captured in electricity production or fuel demand by end use sectors.
+
+Various methods are used to break up state-level energy production values into county level values. These are described for each of the four fuel types below.
+
+### County-level Coal Production
+
+Coal production at the county level is provided from two separate datasets. The first dataset, US EIA E-7 [17], includes coal production data (tons), coal mine type (surface or underground), as well as the mine ID number for 2015. The Mine ID number provided in the US EIA dataset is used to map coal mine data to coal mine data provided by the US Department of Labor - Mine Safety and Health Administration [18]. The latter of these datasets includes the county FIPS codes for each Mine ID that is used to aggregate production to the county level. While information is provided for Refuse coal mines in addition to surface and underground mines, these mines are not included in this analysis.
+
+Coal production for each mine type is provided in short tons per year. This is converted to bbtu where one short ton is equal to 0.02009 bbtu. Production values by mine type are aggregated to the county level.
+
+### County-level Biomass Production
+
+### County-level Natural Gas Production
+
+### County-level Petroleum Production
+
+
+
+
+## Water Withdrawals in Energy Production
 
 Water in energy production is calculated for the following energy types:
 - Coal (specifically, dust control in mining)
-- Biomass (specifically, water used in corn growth for ethanol production)
+- Biomass (specifically, water used in corn growth for ethanol production and water use in the production of ethanol from corn grain)
 - Natural gas (water used in drilling unconventional natural gas wells)
 - Petroleum (water used in drilling both conventional and unconventional oil wells)
 
+Each of these are described in more detail below
+
 ### Coal
-
 #### Water withdrawal
-Average water intensity values are provided for both surface and coal mines from [SOURCE], shown below:
-(7 gallons of water per shortton and 29 million gallons per shortton)
-1 shortton of coal = 0.02009 bbtu
+To determine the amount of water used in the production of coal from each type of coal mine (surface vs. underground), the assumptions from Greenberg et al. [4] are used. Greenberg et al. [4] estimates that surface mines withdraw 7 gallons of water per ton of coal and underground mines withdraw 29 gallons per ton. To determine water source/type for mining dust control, it is assumed that the source of the water withdrawal for coal mining follows the same distribution of water use for other types of mining in the same county. For example, if 50% of water withdrawals for all mining in a county are estimated to come from fresh surface water, the same percentage is applied to coal mining. Water withdrawals for all mining types is provided in the USGS 2015 water use dataset [1].
 
-Average surface coal mine water intensity = 0.00034 million gallons per bbtu
-Average underground coal mine water intensity = 0.00144 million gallons per bbtu
+Given that water withdrawals for coal mining are implicitly included in the water withdrawals for all mining in the USGS 2015 [1] dataset, the water withdrawals for coal mining are subtracted from the water withdrawals to all mining to avoid double counting. 
 
-Water type and source - Coal production is assumed to use water from each type and source at the same fraction as all mining in general. Fresh and saline, groundwater and surface water flows to mining is provided by Dieter et al. [SOURCE] and are therefore available on a county level. For the default assumptions in the flow package when determining the fraction of water to coal production from
-each water type and water source, the average US values are used. These values are:
 
-Water types and water source for coal mining
- - Fresh surface water: 43%
- - Fresh groundwater: 38%
- - Saline groundwater: 18%
- - Saline surface water: 1%
- - Wastewater: 0%
+[CONTINUE HERE]
 
-For counties that did not record water flows to mining in the USGS (dieter et al.) dataset, the US averages for water type and source percentages are applied.
+
+
 
 #### Water Consumption/Evaporation
-Estimates for consumed water from coal mining follow the same consumption fractions as for all mining water consumed. These values are not available in the 2015 dataset and are instead calculated from the 1995 USGS dataset on a county basis. For counties that did not provide these values, the national averages are applied.
-
-The average consumption values for mining in the US are:
- - Fresh groundwater: 38%
- - Fresh surface water: 38%
- - Saline groundwater: 16%
- - Saline surface water: 16%
+Estimates for consumed water from coal mining follow the same consumption fractions as for all mining water consumed. These values are not available in the 2015 dataset and are instead calculated from the 1995 USGS dataset on a county basis.
 
 #### Water Discharge
 Very few coal mines exist in coastal areas of the united states. Therefore, following in line with assumptions made in [Llnl SOURCE], 100% of water not consumed in the production of coal is

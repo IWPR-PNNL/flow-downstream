@@ -42,15 +42,15 @@ The dataset on wastewater treatment facility water flows additionally includes i
 
 The percent of water discharged to each discharge location is available in the EPA dataset [10]. The highest discharge percentage for wastewater facilities is to other wastewater facilities.
 
-    | Discharge Location        | US Avg. %  |
-    |:--------------------------|:-----------|
-    | Surface                   |   25.39 %  |
-    | Other Wastewater Facility |   62.68 %  |
-    | Groundwater               |    6.61 %  |
-    | Irrigation                |    2.93 %  |
-    | Consumption / Evaporation |    1.90 %  |
-    | Ocean                     |    0.44 %  |
-    | Industrial Facility       |    0.05 %  |
+| Discharge Location        | US Avg. %  |
+|:--------------------------|:-----------|
+| Surface                   |   25.39 %  |
+| Other Wastewater Facility |   62.68 %  |
+| Groundwater               |    6.61 %  |
+| Irrigation                |    2.93 %  |
+| Consumption / Evaporation |    1.90 %  |
+| Ocean                     |    0.44 %  |
+| Industrial Facility       |    0.05 %  |
 
 Given that such a high percent of facilities don't discharge outside of the wastewater treatment system, these discharges to other wastewater facilities are redistributed to other discharge locations. This follows the assumption that a wastewater facility will pass water along to another treatment plant that then discharges its water instead of passing it on to yet another wastewater treatment plant. 68% of discharges to other wastewater facilities is redistributed to surface discharge, 19% is redistributed to groundwater discharge, 8% is redistributed to irrigation discharge, and 5% is redistributed to consumption/evaporation. These estimates were derived from the approximate percentage of remaining discharge percentage once discharge to wastewater facilities was removed. Note that this methodology also assumed that the secondary wastewater treatment plant that is receiving the flows exists in the same county as the original wastewater treatment facility.
 

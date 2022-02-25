@@ -3,7 +3,7 @@ layout: default
 title: Residential Sector
 parent: Methodology
 grand_parent: US Sample Data Methodology
-nav_order: 5
+nav_order: 8
 ---
 
 ## Water in Residential Sector
@@ -46,7 +46,7 @@ To split up state total values to individual counties within a state, total valu
 
 ### Energy (Electricity) Demand
 
-Electricity demand by the residential sector is also supplied by US EIA for 2015. Electricity delivery values are used from EIA 861 electricity consumption tables for residential, commercial, industrial, and transportation sectors [9]. Values are originally provided in MWh and are converted to BBTU per day. State level values are broken up into county-level approximations based on population following the same methodology as the fuel deliveries.
+Electricity demand by the residential sector is also supplied by US EIA for 2015. Electricity delivery values are used from the Electric Power Annual dataset for residential, commercial, industrial, and transportation sectors [9]. Values are originally provided in annual MWh and are converted to BBTU per day. State level values are broken up into county-level approximations based on population following the same methodology as the fuel deliveries.
 
 ### Energy Services
 

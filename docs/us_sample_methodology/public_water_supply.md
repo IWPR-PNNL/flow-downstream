@@ -3,18 +3,8 @@ layout: default
 title: Public Water Supply
 parent: Methodology
 grand_parent: US Sample Data Methodology
-nav_order: 3
+nav_order: 7
 ---
-
-## Navigation
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
 ## Water in Public Water Supply
 
 ### Water Withdrawals/Deliveries
@@ -27,7 +17,11 @@ Interbasin transfers are used for both public water supply as well as for irriga
 
 #### Texas interbasin transfer Methodology
 
-To calculate the total interbasin transfer flows in each texas county, the total intake in acre-feet per year was converted to meters per second cubed (1 acre-ft = 25,568 mps^3). The cubic meters per second was then converted to million gallons per day (1 mps^3 = 22.82 mgd). Each value in the Texas interbasin transfer data is associated with two counties (source and target county). Given a lack of more detailed data, it is assumed that half of the water flow and half of the subsequent energy required is split evenly between the two counties.
+To calculate the total interbasin transfer flows in each Texas county, information from the Texas Water Development Board historical municipal water flow data was used. The data tracks self-supply and purchased water supplies for counties in Texas and tracks their source and used county. To track interbasin transfer flows, only flows that occurred between different counties in the year 2015 were included. That is to say, counties that delivered to themselves were not included. A small number of data rows had missing values for the source county, these data points were removed from the dataset.
+
+The difference in elevation between counties is used in the formula to calculate required pumping power to transfer water. Elevation data for each of the counties was taken from USGS's GNIS dataset [16] for the state of Texas. The dataset tracks elevation for a variety of locations within counties. The average elevation for all items included in the dataset for each county was assumed as the elevation for that county. The difference in elevation between the source and target counties was calculated. Only transfers that were delivered to a higher elevation were included in the dataset on the assumption that water deliveries to lower elevations would be predominantly gravity-based. Note that the USGS elevation dataset and associated county FIPS codes have been added into the same datafile as the water transfer data from the Texas Water Development Board and these were not included in the original water data file.
+
+Water flows were provided on a gallons/year basis. This was converted to million gallons per day.
 
 #### Western States interbasin transfer Methodology
 
@@ -51,36 +45,24 @@ Energy use in public water supply is determined by coefficients for energy inten
 
 USDA's Farm and Ranch Irrigation Survey (FRIS) [5] provides state-by-state data on irrigation groundwater depth and average irrigation pressurization levels for irrigation within a state, enabling the calculation of pump electricity consumption for both groundwater and surface water pumping. The 2013 survey is the closest year available to 2015 values. It is assumed that values do not vary significantly between the two years.
 
-The methodology for calculating groundwater and surface water pumping energy is described in Tidwell et al [2]. However, where that publication uses well depth to water to calculate total differential height, the total well depth is used here as a way to offset some of the losses due to friction that would occur in the piping, as described in Lawrence Berkeley National Laboratory (LBNL) Home Energy Saver & Score: Engineering Documentation [6]. Pump efficiency is assumed to be the average (46.5%) of the range (34-59%) listed in [2]. State-level intensity rates are calculated here and applied to the county level water in public water supply values.
+The methodology for calculating groundwater and surface water pumping energy is described in Pabi et al [12]. The function presents a way to calculate the required kwh per day to pump water based on an assumed flow rate (gallons per minute), pumping head (total differential height inclusive of pressurization), and the assumed pump efficiency. This formula is reproduced below. Note that 3960 is the water horsepower, 0.746 is the conversion factor between horsepower and kilowatts, and 24 is simply the number of hours in a day.
 
+Electricity (kWh/day) = ((Flow (gpm) x pumping head (ft)) / (3960 x pumping efficiency)) x 0.746 x 24
 
-The groundwater pumping intensity is calculated through the following:
+The above equation was modified to produce a bbtu per million gallon pumping intensity rate by setting the flow value to the gallons per minute equivalent to 1 million gallons per day (694.4 gpm) and converting kwh to bbtu.
 
-`ACC_GRAVITY = 9.81  # Acceleration of gravity  (m/s^2)
-WATER_DENSITY = 997  # Water density (kg/m^3)
-PUMP_EFF = .465  # assumed pump efficiency rate<p>
-PSI_PSF_CONVERSION = 2.31  # conversion of pounds per square inch (psi) to pounds per square foot (psf)
-CUBIC_METERS_MG_CONVERSION = 3785.41178  # conversion factor for m^3 to million gallons
-JOULES_KWH_CONVERSION = 1 / 3600000  # conversion factor from joules to kWh
-KWH_BBTU_CONVERSION = 3412.1416416 / 1000000000  # 1 kWh is equal to 3412.1416416 btu
-METERS_FT_CONVERSION = 0.3048  # meters in a foot`
+While some research uses well depth to water to calculate total differential height, the total well depth is used here instead as a way to offset some of the losses due to friction that would occur in the piping, as described in Lawrence Berkeley National Laboratory (LBNL) Home Energy Saver & Score: Engineering Documentation [6]. Pump efficiency is assumed to be the average (46.5%) of the range (34-59%) listed in Tidwell et al. [2]. State-level intensity rates are calculated here and applied to the county level water in the agriculture sectors.
 
-`head_ft = PSI_PSF_CONVERSION * average_operating_pressure_psi  # conversion of psi to head (pounds per sqft)
-diff_height_gw = METERS_FT_CONVERSION * (average_well_depth_ft + head_ft)  # calc. differential height (m)
-pump_power_gw = (water_density * diff_height_gw * ACC_GRAVITY * CUBIC_METERS_MG_CONVERSION) / PUMP_EFF  # joules/MG
-groundwater_pumping_bbtu_per_mg = pump_power_gw * JOULES_KWH_CONVERSION * KWH_BBTU_CONVERSION  # power intensity (bbtu/mg)`
-
-
-For surface water pumping, the average well depth is set to zero.
+In order to calculate surface water pumping energy, the same methodology is used as calculating groundwater but the well-depth is set to 0 ft.
 
 #### Treatment
 
 The energy intensity for public water supply treatment for fresh water is provided in Greenberg et al. [4]. Estimates for desalination (saline water treatment) are provided by Tidwell et al. [2].
 
-Fresh surface water treatment = 405 kWh/mg <p>
-Fresh groundwater treatment = 205 kWh/mg <p>
-saline surface water treatment = 12,000 kWh/mg <p>
-saline groundwater treatment = 12,000 kWh/mg <p>
+Fresh surface water treatment = 405 kWh/mg
+Fresh groundwater treatment = 205 kWh/mg
+saline surface water treatment = 12,000 kWh/mg
+saline groundwater treatment = 12,000 kWh/mg
 
 All values are converted to bbtu/mgd.
 
@@ -94,20 +76,17 @@ The energy intensity required for interbasin transfers was calculated on a per-c
 
 ##### Texas interbasin transfer energy intensity
 
-Information provided in Tidwell et al. [2] includes the elevation difference (ft) between the two counties that are passing water. With this information, along with the estimated pumping efficiency per county, the energy required to transfer each mgd can be calculated.
+To calculate the power required for interbasin transfers in Texas, the equation for power required to perform a static lift presented in Tidwell et al. [2] was used. The power required is equal to the product of the mass flow rate of water (cubic meters/hr), the liquid density of water (997 kg/m^3), the acceleration due to gravity (9.81 m/s^2), and the differential height (meters). This product is then divided by the assumed pumping efficiency (46% here). This gives the total watts per hour required to pump the water from one county to the other which is then converted to bbtu/day.
 
-The total mwh per mgd is calculated as:
+Each value in the Texas interbasin transfer data is associated with two counties (source and target county). Given a lack of more detailed data, it is assumed that half of the water flow and half of the subsequent energy required is split evenly between the two counties.
 
- energy_mwh = ((elevation_meters * mps_cubed * acc_gravity * water_density) / pump_eff) / (10 ** 6)
+The energy intensity of interbasin transfers in Texas is the ratio of energy required per day to water moved per day.
 
-where,
-elevation_meters = elevation difference between the two counties in meters
-mps_cubed = the water flow value in meters per second cubed
-acc_gravity = the acceleration due to gravity (9.81 m/sec^2)
-water_density = the density of water (997 kg/m^3)
-pump_eff = assumed pumping efficiency
+##### West inter basin transfers
 
-This value is converted to bbtu and divided in half to split between the source and target counties (to follow the same methodology as the interbasin water transfer value described previously on this page). The total energy in interbasin transfer is divided by the total interbasin water flow in each county to get the energy intensity per county.
+Energy for interbasin transfers was provided directly in Tidwell et al. [2] for the states included. Low (mwh/yr) and high (mwh/yr) values were provided . The average of these values was taken for this analysis and converted to bbtu/day.
+
+The energy intensity for interbasin transfers in western counties is the ratio of energy per day to water moved per day.
 
 ### Energy Services
 
