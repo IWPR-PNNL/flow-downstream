@@ -2,21 +2,11 @@
 layout: default
 title: Setup
 parent: User Guide
-nav_order: 1
+nav_order: 3
 ---
 
 # Setup
 
-## Configuration File
+The **flow** package requies a pandas DataFrame with input data to run the calculations. This DataFrame can be read in using the flow.read_input_data() function which takes a file path and reads the data in as a pandas DataFrame. The flow package comes with a sample input data file with input flow values for all US counties for the year 2015 and can be found in the sample_data folder in the GitHub repository.
 
-The **flow** package uses a YAML configuration file that can be customized to provide a path to input data, a path to save output data (if desired), and a path to a json file containing geospatial data to visualize output for the regions included in the input data if desired. flow comes preset with a configuration file containing paths to the US 2015 County Level sample dataset contained within the data folder of the package, an path to deposit data into the output folder, and a path to a json file for US Counties contained within the data folder.
-
-
-  `input_data:
-    path: <path to input file>
-
-    output_data:
-    path: <path to output folder>
-
-    geospatial_data:
-    path: <path to geospatial json file>
+Though the flow package has data to run the calculations for US counties, data for other regions, sectors, and units can be provided and run through the model. For more information on how to structure the input data and required formatting, see the 'Generalizability' page.
