@@ -46,9 +46,16 @@ In addition to the Pandas DataFrame output, a variety of vizualization and analy
 
 Sankey diagrams are used to visualize flows from source nodes to target nodes where links between nodes have variable width depending on the value of the flow. The 'flow.plot_sankey()' function plots up to two sankey diagrams (one for each unit specified) based on the run output that is provided to the function. Users can specify a level of granularity to show flows from level 1 (major sector aggregates only) to level 5 (the highest level of granularity available). For more information on the specific function paramaters, defaults, and other components, see the function_guide section.
 
+![sankey_example](https://user-images.githubusercontent.com/74064300/157076964-e8a902e2-30c4-45a1-b860-f0660c68795e.png)
 
 
 ### Single region stacked barcharts of sectors
 
+![image](https://user-images.githubusercontent.com/74064300/157077416-13e7191e-bd2c-4744-8407-32cc8f91889b.png)
+
+![image](https://user-images.githubusercontent.com/74064300/157079185-d433d9f6-c6c1-4fd2-8bf9-98e95b995e44.png)
+
 
 ### Cloropleth map displaying single flow values across regions
+
+![image](https://user-images.githubusercontent.com/74064300/157077774-28f4ea72-6c4e-49fc-869d-bf878d91b092.png)
