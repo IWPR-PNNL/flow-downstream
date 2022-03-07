@@ -59,3 +59,5 @@ Sankey diagrams are used to visualize flows from source nodes to target nodes wh
 ### Cloropleth map displaying single flow values across regions
 
 ![image](https://user-images.githubusercontent.com/74064300/157077774-28f4ea72-6c4e-49fc-869d-bf878d91b092.png)
+
+For more information see [US County Geospatial Information](US Sample Data Methodology).
